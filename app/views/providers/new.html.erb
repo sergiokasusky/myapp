@@ -2,26 +2,26 @@
 <h2><i>Aquí puedes darte de alta como un nuevo proveedor</i></h2>
 <%= form_for :provider, url: providers_path  do |f| %>
   <p>
-    <%= f.label "Empresa o nombre comercial" %><br>
+    <%= f.label :Empresa_o_nombre_comercial %><br>
     <%= f.text_field :nombre_comercial %>
   </p>
  
   <p>
-    <%= f.label "Tu nombre completo" %><br>
+    <%= f.label :Tu_nombre_completo %><br>
     <%= f.text_field :nombre_contacto %>
   </p>
   
   <p>
-    <%= f.label "Email" %><br>
+    <%= f.label :Email %><br>
     <%= f.text_field :email %>
   </p>
   
   <p>
-    <%= f.label "Password" %><br>
+    <%= f.label :Password %><br>
     <%= f.text_field :password %>
   </p>
  
   <p>
-    <%= f.submit  "Guardar mis datos" %>
+    <%= f.submit  :Guardar_mis_datos %>
   </p>
 <% end %>
