@@ -1,0 +1,39 @@
+<h1>Edición de un Proveedor</h1>
+ 
+<%= form_for :provider, url: provider_path(@provider), method: :patch do |f| %>
+  <% if @provider.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@provider.errors.count, "error") %> impidieron que este Proveedor se guardara:</h2>
+    <ul>
+    <% @provider.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :Empresa_o_nombre_comercial %><br>
+    <%= f.text_field :nombre_comercial %>
+  </p>
+ 
+  <p>
+    <%= f.label :Tu_nombre_completo %><br>
+    <%= f.text_field :nombre_contacto %>
+  </p>
+  
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email %>
+  </p>
+  
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.text_field :password %>
+  </p>
+ 
+  <p>
+    <%= f.submit :Guardar_datos %>
+  </p>
+<% end %>
+ 
+<%= link_to :Regresar, providers_path %>

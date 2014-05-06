@@ -15,8 +15,12 @@
       <td><%= provider.nombre_contacto %></td>
 	  <td><%= provider.email %><td>
 	  <td><%= provider.password %><td>
-    </tr>
+      <td><%= link_to 'Mostrar', provider_path(provider) %></td>
+      <td><%= link_to 'Editar', edit_provider_path(provider) %></td>
+	</tr>
 	<% i= i + 1 %>
   <% end %>
 </table>
 <%= link_to :Registrar_nueva_empresa, new_provider_path %>
+<br>
+<%= link_to :Indice, controller: 'welcome' %>

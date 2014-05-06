@@ -13,6 +13,20 @@ class ProvidersController < ApplicationController
     @provider = Provider.find(params[:id])
   end
   
+  def edit
+    @provider = Provider.find(params[:id])
+  end
+  
+  def update
+    @provider = Provider.find(params[:id])
+ 
+    if @provider.update(provider_params)
+      redirect_to @provider
+    else
+      render 'edit'
+    end
+  end
+  
   def index
     @providers = Provider.all
   end
