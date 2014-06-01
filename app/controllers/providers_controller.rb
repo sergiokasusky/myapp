@@ -31,6 +31,17 @@ class ProvidersController < ApplicationController
     @providers = Provider.all
   end
   
+  def about
+    provider= Provider.new()
+    provider.nombre_comercial= "Nombre comercial insertado manualmente"
+    provider.nombre_contacto= "Nombre contacto insertado manualmente"
+    provider.email= "email insertado manualmente"
+    provider.password= "password insertado manualmente"
+    provider.save
+    
+    #@providers = Provider.all
+  end
+  
   private #se requiere indicar en cada controlador los parámetros permitidos
     def provider_params
       params.require(:provider).permit(:nombre_comercial, :nombre_contacto, :email, :password)

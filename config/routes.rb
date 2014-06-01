@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :providers
+  #resources :providers
+  resources :providers do
+         collection do
+              get :about
+         end
+       end
+  
 
   get 'welcome/index'
 
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get 'products/:id' => 'catalog#view',
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
