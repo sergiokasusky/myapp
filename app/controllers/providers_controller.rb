@@ -38,8 +38,11 @@ class ProvidersController < ApplicationController
     provider.email= "email insertado manualmente"
     provider.password= "password insertado manualmente"
     provider.save
-    
-    #@providers = Provider.all
+  end
+
+  def empresasunicas
+     #@providers = Provider.all
+     @providers= Provider.select("DISTINCT(NOMBRE_COMERCIAL)")
   end
   
   private #se requiere indicar en cada controlador los parámetros permitidos

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :providers do
          collection do
               get :about
+              get :empresasunicas
          end
        end
   

@@ -1,0 +1,10 @@
+<p>
+  <strong>Empresas unicas</strong>  
+</p>
+<% #@providers.select("DISTINCT(NOMBRE_COMERCIAL)").each do |p| %>
+<% @providers.each do |p| %>
+<%= p.nombre_comercial %>
+<br>
+<% end %>
+
+<%= link_to :Regresar, controller: 'providers' %>
